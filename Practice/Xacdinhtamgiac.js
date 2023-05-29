@@ -10,7 +10,4 @@ function kiemTraTamGiac(a, b, c) {
     }
   }
   
-  // Ví dụ sử dụng
-  console.log(kiemTraTamGiac(3, 4, 5)); // Output: Đây là một tam giác hợp lệ.
-  console.log(kiemTraTamGiac(1, 1, 3)); // Output: Đây không phải là một tam giác hợp lệ.
-  console.log(kiemTraTamGiac(-1, 2, 4)); // Output: Các cạnh phải lớn hơn 0.
+ 
