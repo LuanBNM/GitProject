@@ -1,1 +1,0 @@
-Folder làm thực hành
