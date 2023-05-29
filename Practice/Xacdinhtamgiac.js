@@ -9,5 +9,5 @@ function kiemTraTamGiac(a, b, c) {
       return "Các cạnh phải lớn hơn 0.";
     }
   }
-  
+  // avf
  
