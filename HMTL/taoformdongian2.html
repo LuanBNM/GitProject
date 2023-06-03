@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Tạo Form Đơn Giản</title>
+  <p>SỞ THÍCH CỦA BẠN</p>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -56,22 +57,21 @@
       border-collapse: collapse;
     }
 
-    th {
-      border-radius: 5px;
-      padding: 10px;
-      background-color: rgb(212, 110, 21);
-      color: white;
+    p {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #df8b0c;
+      border: 1px solid #dddddd;
+      border-radius: 2px;
       text-align: center;
-  
+      color: rgb(239, 240, 246);
+      font-weight:bold;
     }
   </style>
 </head>
 <body>
   <form>
-    <table>
-        <th> SỞ THÍCH CỦA BẠN </th>
-    </table>
-    <br>
     <label for="yourname">Họ và tên:</label>
     <input type="text" id="yourname" name="yourname" required>
 
