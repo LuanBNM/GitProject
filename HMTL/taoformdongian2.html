@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tạo Form Đơn Giản</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    form {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+      border-radius: 2px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #360be4;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+
+    input[type="checkbox"] {
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #c6d1c7;
+      color: hsl(0, 0%, 4%);
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #bac0ae;
+    }
+    table {
+      border-collapse: collapse;
+    }
+
+    th {
+      border-radius: 5px;
+      padding: 10px;
+      background-color: rgb(212, 110, 21);
+      color: white;
+      text-align: center;
+  
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <table>
+        <th> SỞ THÍCH CỦA BẠN </th>
+    </table>
+    <br>
+    <label for="yourname">Họ và tên:</label>
+    <input type="text" id="yourname" name="yourname" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label>Sở thích:</label>
+    <input type="checkbox" name="hobby"/> Đọc sách
+    <input type="checkbox" name="hobby"/> Thể Thao
+    <input type="checkbox" name="hobby"/> Âm nhạc
+    <br>
+    <input type="checkbox" name="hobby"/> Lướt Web
+    <input type="checkbox" name="hobby"/> Chơi game
+    <input type="checkbox" name="hobby"/> Điện ảnh
+    <br>
+    <input type="checkbox" name="hobby"/> Du lịch
+    
+    <br>
+    <br>
+
+    <input type="submit" value="Gửi thông tin">
+    <input type="reset" value="Nhập lại">
+  </form>
+</body>
+</html>
