@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Đăng ký học viên</title>
+  <style>
+    th {
+      width: 100%;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: rgb(133, 215, 233);
+      color: rgb(18, 37, 248);
+      text-align: center;
+      
+    }
+    label {
+      display: block;
+      color: #360be4;
+      font-weight:lighter;
+    }
+    input[type="text"],
+    input[type="address"],
+    input[type="phonenumber"],
+    input[type="date"],
+    input[type="email"] {
+      width: 15%;
+      padding: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+    select {
+      width: 15%;
+      padding: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #c6d1c7;
+      color: hsl(0, 0%, 4%);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body style="background-color: hsl(52, 74%, 73%);">
+  <form>
+    <table>
+        <th>ĐĂNG KÝ HỌC VIÊN</th>
+    </table>
+    <br>
+    <label for="yourname">Họ và tên:</label>
+    <input type="text" id="yourname" name="yourname" required>
+   
+    <br>
+    <label for="birthday">Ngày sinh:</label>
+    <input type="date" id="birthday" name="birthday" required>
+   
+    <br>
+    <label>Giới tính:</label>
+    <input type="radio" name="rd"/> Nam
+    <input type="radio" name="rd"/> Nữ
+   
+    <br>
+    <label for="address">Địa chỉ:</label>
+    <input type="text" name="address"/> 
+   
+    <br>
+    <label for="class">Lớp:</label>
+    <select>
+      <option selected disabled>--Chọn lớp--</option>
+      <option value="Sơ Đẳng">Sơ Đẳng</option>
+      <option value="Trung Cấp">Trung Cấp</option>
+      <option value="Cao Cấp">Cao Cấp</option>
+    </select>
+
+    <br>
+    <label for="email">E-mail:</label>
+    <input type="email" name="email"/> 
+ 
+    <br>
+    <label for="Phone">Điện thoại:</label>
+    <input type="phonenumber" name="Phone"/> 
+ 
+    <br>
+    <input type="submit" value="Đăng ký">
+    <input type="reset" value="Nhập lại">
+  </form>
+</body>
+</html>
