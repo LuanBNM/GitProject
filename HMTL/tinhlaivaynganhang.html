@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tính lãi suất ngân hàng</title>
+  <script type="text/javascript">
+    function tinhLaiSuatNganHang() {
+      // Lấy giá trị từ các trường input
+      var soTienVay = parseFloat(document.getElementById('soTienVay').value.replace(/,/g, ''));
+      var laiSuat = parseFloat(document.getElementById('laiSuat').value);
+      var soNam = parseFloat(document.getElementById('soNam').value);
+
+      // Kiểm tra nếu có giá trị hợp lệ
+      if (!isNaN(soTienVay) && !isNaN(laiSuat) && !isNaN(soNam)) {
+        // Tính lãi theo công thức lãi đơn
+        var lai = soTienVay * (laiSuat / 100) * soNam;
+
+        // Tổng số tiền phải trả sau n năm
+        var tongTien = soTienVay + lai;
+
+        // Hiển thị kết quả
+        document.getElementById('ketQua').innerHTML = "Số tiền phải trả sau " + soNam + " năm là: " + tongTien.toLocaleString();
+      } else {
+        // Hiển thị thông báo lỗi nếu có giá trị không hợp lệ
+        document.getElementById('ketQua').innerHTML = "Vui lòng nhập đúng giá trị.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Tính lãi suất ngân hàng</h1>
+
+  <label for="soTienVay">Số tiền vay:</label>
+  <input type="text" id="soTienVay" placeholder="Nhập số tiền vay" /><br />
+
+  <label for="laiSuat">Lãi suất (%):</label>
+  <input type="text" id="laiSuat" placeholder="Nhập lãi suất" /><br />
+
+  <label for="soNam">Số năm:</label>
+  <input type="text" id="soNam" placeholder="Nhập số năm" /><br />
+
+  <button onclick="tinhLaiSuatNganHang()">Tính toán</button>
+
+  <p id="ketQua"></p>
+</body>
+</html>
