@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Nhập vào các giá trị năm, tháng, ngày từ người dùng
+        let year = parseInt(prompt("Nhập năm:"));
+        let month = parseInt(prompt("Nhập tháng:"));
+        let day = parseInt(prompt("Nhập ngày:"));
+
+        // Kiểm tra xem giá trị nhập vào có hợp lệ hay không
+        if (isNaN(year) || isNaN(month) || isNaN(day)) {
+        console.log("Giá trị nhập vào không hợp lệ.");
+        } else {
+
+        // Chuyển đổi giá trị thành chuỗi và thêm các ký tự '0' nếu cần thiết
+        let formattedDay = day < 10 ? '0' + day : day.toString();
+        let formattedMonth = month < 10 ? '0' + month : month.toString();
+        
+        // Hiển thị ngày tháng theo định dạng dd-mm-yyyy
+        let formattedDate = formattedDay + '-' + formattedMonth + '-' + year.toString();
+        document.write("Ngày tháng: " + formattedDate);
+}
+    </script>
+</body>
+</html>
