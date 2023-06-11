@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formInput">
+        <input type="number" id="a" placeholder="Nhập A">
+        <input type="number" id="b" placeholder="Nhập B">
+        <input type="number" id="c" placeholder="Nhập C">
+    </form>
+    
+
+    <p id="result"></p>
+    <p id="tb" style="color: red;"></p>
+    <button onclick="kiemTraTamGiac()">Kiểm tra</button>
+    <button onclick="tinhTrungBinh()">Trung Bình</button>
+
+    <script>
+        let aInput = document.getElementById("a");
+        let bInput = document.getElementById("b");
+        let cInput = document.getElementById("c");
+
+        function kiemTraTamGiac() {
+            let a = +aInput.value;
+            let b = +bInput.value;
+            let c = +cInput.value;
+
+            console.log(a, b, c);
+            if (a <= 0 || b <= 0 || c <= 0 || isNaN(a) || isNaN(b) || isNaN(c)) {
+                result = "Dữ liệu nhập vào không hợp lệ";
+            } else {
+                if (a + b > c && b + c > a && c + a > b) {
+                    result = "Đây là 1 tam giác";
+
+                } else {
+                    result = "Đây không phải là 1 tam giác";
+                }
+            }
+
+            document.getElementById("result").innerText = result;
+            // alert(result);
+            // document.write(result);
+            // console.log(result)
+        }
+
+        function tinhTrungBinh() {
+            let a = +aInput.value;
+            let b = +bInput.value;
+            let c = +cInput.value;
+
+            let tb = (a+b+c)/3;
+
+            document.getElementById("tb").innerText = tb;
+            document.getElementById("formInput").reset();
+        }
+
+    </script>
+</body>
+
+</html>
