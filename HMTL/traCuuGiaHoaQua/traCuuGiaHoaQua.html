@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra giá</title>
+    <p>Giá Hoa Quả</p>
+</head>
+<style>
+    body{
+        position: relative;
+    }
+
+    #btn-game{
+        position: absolute;
+        left: 100px;
+        top: 100px;
+    }
+    p {
+      max-width: 300px;
+      margin: 1 auto;
+      padding: 20px;
+      background-color: #0cdf99;
+      border: 1px solid #dddddd;
+      border-radius: 2px;
+      text-align: center;
+      color: rgb(5, 41, 245);
+      font-weight:bold;
+    }
+</style>
+<body>
+  <form>
+    <label for="fruitInput">Nhập tên hoa quả:</label>
+    <input type="text" id="fruitInput" />
+    <button type="button" onclick="tinhGiaHoaQua()">Xem giá</button>
+  </form>
+  <div id="result"></div>
+  <script>
+    function tinhGiaHoaQua() {
+      var tenHoaQua = document.getElementById("fruitInput").value;
+      var giaTien = 0;
+      switch (tenHoaQua) {
+        case "Ổi":
+        case "Dưa Hấu":
+          giaTien = 20000;
+          break;
+        case "Táo":
+        case "Xoài":
+          giaTien = 30000;
+          break;
+        case "Cam":
+        case "Chôm Chôm":
+          giaTien = 40000;
+          break;
+        case "Măng Cụt":
+          giaTien = 50000;
+          break;
+        default:
+          giaTien = -1;
+          break;
+      }
+      var resultDiv = document.getElementById("result");
+
+      if (giaTien !== -1) {
+        var giaTienFormatted = giaTien.toLocaleString("vi-VN");
+        resultDiv.innerHTML = `Giá của hoa quả ${tenHoaQua} là ${giaTienFormatted} VNĐ/kg.`;
+      } else {
+        resultDiv.innerHTML = "Không tìm thấy hoa quả trong danh sách.";
+      }
+    }
+  </script>
+</body>
+</html>
