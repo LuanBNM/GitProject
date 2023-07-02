@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính số ngày của tháng</title>
+    <script type="text/javascript">
+        function tinhSoNgay() {
+            var soThuTuThang = parseInt(document.getElementById("soThuTuThang").value);
+            var soNgay = 0;
+
+            switch (soThuTuThang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    soNgay = 31;
+                    break;
+                case 2:
+                    soNgay = "28 hoặc 29";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    soNgay = 30;
+                    break;
+                default:
+                    alert("Vui lòng nhập số thứ tự của tháng từ 1 đến 12.");
+                    return;
+            }
+
+            document.getElementById("soNgay").innerHTML = "Tháng " + soThuTuThang + " có " + soNgay + " ngày";
+        }
+    </script>
+</head>
+<body>
+    <h1>Tính số ngày của tháng</h1>
+    <form>
+        <label for="soThuTuThang">Số thứ tự của tháng (1-12):</label>
+        <input type="number" id="soThuTuThang" min="1" max="12" required><br>
+
+        <button type="button" onclick="tinhSoNgay()">Tính số ngày</button>
+    </form>
+
+    <div id="soNgay"></div>
+</body>
+</html>
