@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính điểm đại học khối D</title>
+</head>
+<body>
+  <h1>Tính điểm Đại học</h1>
+  <form>
+      <label for="diemToan">Môn Toán:</label>
+      <input type="number" id="diemToan" required><br>
+
+      <label for="diemVan">Môn Văn:</label>
+      <input type="number" id="diemVan" required><br>
+
+      <label for="diemAnh">Môn Anh:</label>
+      <input type="number" id="diemAnh" required><br>
+
+      <label for="khuVuc">Khu vực:</label>
+      <select id="khuVuc">
+          <option value="">Chọn khu vực</option>
+          <option value="KV1">KV1</option>
+          <option value="KV2-NT">KV2-NT</option>
+          <option value="KV2">KV2</option>
+          <option value="KV3">KV3</option>
+      </select><br>
+
+      <button type="button" onclick="tinhDiem()">Tính điểm</button>
+  </form>
+  <div id="tongDiem"></div>
+
+    <script type="text/javascript">
+      function tinhDiem() {
+          var diemToan = parseFloat(document.getElementById("diemToan").value);
+          var diemVan = parseFloat(document.getElementById("diemVan").value);
+          var diemAnh = parseFloat(document.getElementById("diemAnh").value);
+          var khuVuc = document.getElementById("khuVuc").value;
+          var diemKhuVuc = 0;
+
+          switch (khuVuc) {
+              case "KV1":
+                  diemKhuVuc = 0.75;
+                  break;
+              case "KV2-NT":
+                  diemKhuVuc = 0.5;
+                  break;
+              case "KV2":
+                  diemKhuVuc = 0.25;
+                  break;
+              case "KV3":
+                  diemKhuVuc = 0;
+                  break;
+              default:
+                  alert("Vui lòng chọn khu vực.");
+                  return;
+          }
+
+          var tongDiem = diemToan + diemVan + diemAnh + diemKhuVuc;
+          document.getElementById("tongDiem").innerHTML ="Tổng điểm thi đại học khối D của bạn là: " + tongDiem;
+      }
+  </script>
+  <style>
+    input[type="number"],
+    select[id="khuVuc"] {
+      width: 10%;
+      padding: 5px;
+      margin-left: 20px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+</style>
+
+</body>
+</html>
+
+
