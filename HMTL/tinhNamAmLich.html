@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tính năm âm lịch</title>
+  <script>
+    
+    function tinhNamAmLich() {
+      // Lấy giá trị năm dương lịch từ người dùng
+      var namDuongLich = parseInt(document.getElementById("namDuongLich").value);
+
+      // Kiểm tra xem đã nhập giá trị năm dương lịch hay chưa
+      if (isNaN(namDuongLich)) {
+        // Hiển thị thông báo lỗi
+        alert("Vui lòng nhập giá trị năm dương lịch");
+        return;
+      }
+      // Tính Can
+      var can = namDuongLich % 10;
+      var canLichAm;
+      switch (can) {
+        case 0:
+          canLichAm = "Canh";
+          break;
+        case 1:
+          canLichAm = "Tân";
+          break;
+        case 2:
+          canLichAm = "Nhâm";
+          break;
+        case 3:
+          canLichAm = "Quý";
+          break;
+        case 4:
+          canLichAm = "Giáp";
+          break;
+        case 5:
+          canLichAm = "Ất";
+          break;
+        case 6:
+          canLichAm = "Bính";
+          break;
+        case 7:
+          canLichAm = "Đinh";
+          break;
+        case 8:
+          canLichAm = "Mậu";
+          break;
+        case 9:
+          canLichAm = "Kỷ";
+          break;
+      }
+
+      // Tính Chi
+      var chi = namDuongLich % 12;
+      var chiLichAm;
+      switch (chi) {
+        case 0:
+          chiLichAm = "Thân";
+          break;
+        case 1:
+          chiLichAm = "Dậu";
+          break;
+        case 2:
+          chiLichAm = "Tuất";
+          break;
+        case 3:
+          chiLichAm = "Hợi";
+          break;
+        case 4:
+          chiLichAm = "Tý";
+          break;
+        case 5:
+          chiLichAm = "Sửu";
+          break;
+        case 6:
+          chiLichAm = "Dần";
+          break;
+        case 7:
+          chiLichAm = "Mẹo";
+          break;
+        case 8:
+          chiLichAm = "Thìn";
+          break;
+        case 9:
+          chiLichAm = "Tỵ";
+          break;
+        case 10:
+          chiLichAm = "Ngọ";
+          break;
+        case 11:
+          chiLichAm = "Mùi";
+          break;
+      }
+
+      // Tính năm âm lịch
+      var namAmLich = canLichAm + " " + chiLichAm;
+
+      // Hiển thị kết quả
+      document.getElementById("ketQua").innerHTML = "Năm âm lịch tương ứng với năm " + namDuongLich + " là: " + namAmLich;
+    }
+  </script>
+</head>
+<body>
+  <h1>Tính năm âm lịch</h1>
+  <label for="namDuongLich">Nhập năm dương lịch:</label>
+  <input type="number" id="namDuongLich">
+  <button onclick="tinhNamAmLich()">Tính</button>
+  <p id="ketQua"></p>
+</body>
+</html>
