@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <h1>Ứng dụng chuyển đổi tiền tệ</h1>
+    
+    <form id="currencyForm">
+        <div>
+            <label for="fromCurrency">From Currency:<br></label>
+            <select id="fromCurrency">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+                <!-- Thêm các đồng tiền khác vào đây nếu cần -->
+            </select>
+        </div>
+        <div>
+            <label for="toCurrency">To Currency:<br></label>
+            <select id="toCurrency">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+                <!-- Thêm các đồng tiền khác vào đây nếu cần -->
+            </select>
+        </div>
+        <label for="amount">Số tiền:</label>
+        <input type="number" id="amount">
+        
+        <button type="button" onclick="convertCurrency()">Convert</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        function convertCurrency() {
+    // Lấy giá trị từ form
+    var fromCurrency = document.getElementById("fromCurrency").value;
+    var toCurrency = document.getElementById("toCurrency").value;
+    var amount = parseFloat(document.getElementById("amount").value);
+    
+    // Tỷ giá các đồng tiền (cần cập nhật)
+    var exchangeRate = {
+        "VND-USD": 0.0000408,
+        "USD-VND": 24500
+        // Thêm các tỷ giá khác vào đây theo định dạng "Đồng tiền gốc-Đồng tiền đích": tỷ giá
+    };
+    
+    // Kiểm tra xem có tỷ giá cho cặp đồng tiền đã chọn hay không
+    var rateKey = fromCurrency + "-" + toCurrency;
+    if (exchangeRate.hasOwnProperty(rateKey)) {
+        // Tính giá trị chuyển đổi
+        var convertedAmount = amount * exchangeRate[rateKey];
+        // Thêm dấu phẩy cách giữa hàng ngàn
+        var formattedAmount = convertedAmount.toLocaleString();
+        // Hiển thị kết quả
+        document.getElementById("result").innerHTML = "Số tiền chuyển đổi: " + formattedAmount + " " + toCurrency;
+    
+    } else {
+        document.getElementById("result").innerHTML = "Không có tỷ giá cho cặp đồng tiền này.";
+    }
+}
+    </script>
+</body>
+</html>
